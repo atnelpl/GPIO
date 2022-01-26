@@ -19,57 +19,59 @@ Gdyby komus nie chcialo sie po "Mirkowemu" za kazdym razem grzebac w eagle_soc.h
 
 Jesli ktos juz jest bardzo pedantyczny, mozna sobie stworzyc funkcje podobna do ponizszej i umiescic ja poza user_main.c, a nastepnie wywolywac tylko dla potrzebnych pinow.
 
-```c
-void gpio_enable(GPIO pin) {
 
+void CUST_GPIO_ENABLE(int pin)
+{
 	switch (pin) {
-	case GPIO0:
+	case 0:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0);
 		break;
-	case GPIO1:
+	case 1:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_GPIO1);
 		break;
-	case GPIO2:
+	case 2:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
 		break;
-	case GPIO3:
+	case 3:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0RXD_U, FUNC_GPIO3);
 		break;
-	case GPIO4:
+	case 4:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO4_U, FUNC_GPIO4);
 		break;
-	case GPIO5:
+	case 5:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO5_U, FUNC_GPIO5);
 		break;
-	case GPIO6:
+	case 6:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_CLK_U, FUNC_SDCLK);
 		break;
-	case GPIO7:
+	case 7:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_DATA0_U, FUNC_SDDATA0);
 		break;
-	case GPIO8:
+	case 8:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_DATA1_U, FUNC_SDDATA1);
 		break;
-	case GPIO9:
+	case 9:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_DATA2_U, FUNC_SDDATA2);
 		break;
-	case GPIO10:
+	case 10:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_DATA3_U, FUNC_SDDATA3);
 		break;
-	case GPIO11:
+	case 11:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_SD_CMD_U, FUNC_SDCMD);
 		break;
-	case GPIO12:
+	case 12:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDI_U, FUNC_GPIO12);
 		break;
-	case GPIO13:
+	case 13:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTCK_U, FUNC_GPIO13);
 		break;
-	case GPIO14:
+	case 14:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTMS_U, FUNC_GPIO14);
 		break;
-	case GPIO15:
+	case 15:
 		PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDO_U, FUNC_GPIO15);
 		break;
+	default:
+		break;
 	}
-```
+}
