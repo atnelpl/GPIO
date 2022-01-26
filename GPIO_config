@@ -19,7 +19,6 @@ Gdyby komus nie chcialo sie po "Mirkowemu" za kazdym razem grzebac w eagle_soc.h
 
 Jesli ktos juz jest bardzo pedantyczny, mozna sobie stworzyc funkcje podobna do ponizszej i umiescic ja poza user_main.c, a nastepnie wywolywac tylko dla potrzebnych pinow.
 
-
 void CUST_GPIO_ENABLE(int pin)
 {
 	switch (pin) {
